@@ -1,38 +1,118 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  padding: 20px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #4caf50;
   color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 20px 0 10px;
+}
+
+p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  font-size: 1.1em;
+  margin: 5px 0;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ff5722;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
+.App-link:hover {
+  text-decoration: underline;
+}
+
+.App-footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.intro, .details, .github {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.github {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .details {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p, li {
+    font-size: 1em;
   }
 }
