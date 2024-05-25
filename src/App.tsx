@@ -15,8 +15,9 @@ const App: React.FC = () => {
         <div className="card">
           <h2>趣味</h2>
           <ul>
-            <li>プログラミング</li>
+            <li>映画鑑賞</li>
             <li>サッカー</li>
+            <li>Youtube</li>
           </ul>
         </div>
         <div className="card">
