@@ -1,7 +1,30 @@
 import React from 'react';
 import './App.css';
 
-const App: React.FC = () => {
+interface Hobby {
+  name: string;
+}
+
+interface Skill {
+  name: string;
+}
+
+interface AppProps {}
+
+const hobbies: Hobby[] = [
+  { name: 'サッカー' },
+  { name: '映画鑑賞' },
+  { name: 'Youtube' }
+];
+
+const skills: Skill[] = [
+  { name: 'HTML' },
+  { name: 'CSS' },
+  { name: 'JavaScript' },
+  { name: 'React' }
+];
+
+const App: React.FC<AppProps> = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -9,24 +32,23 @@ const App: React.FC = () => {
       </header>
       <section className="intro">
         <h2>自己紹介</h2>
-        <p>こんにちは、私は遠藤 万輝人です。</p>
+        <p>こんにちは、私は遠藤 万輝人です。<br />現在大学3年生でプログラミングの勉強をしています。<br />フロントエンドの言語をメインに勉強しています。<br />勉強と並行して、中学生にサッカーを教えるコーチをしています。<br />よろしくお願いします。</p>
       </section>
       <section className="details">
         <div className="card">
           <h2>趣味</h2>
           <ul>
-            <li>映画鑑賞</li>
-            <li>サッカー</li>
-            <li>Youtube</li>
+            {hobbies.map((hobby, index) => (
+              <li key={index}>{hobby.name}</li>
+            ))}
           </ul>
         </div>
         <div className="card">
           <h2>スキル</h2>
           <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
+            {skills.map((skill, index) => (
+              <li key={index}>{skill.name}</li>
+            ))}
           </ul>
         </div>
       </section>
